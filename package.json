@@ -1,0 +1,12 @@
+{
+  "name": "service-proposal-formatting-assistant",
+  "version": "1.0.0",
+  "description": "TJAD 服务建议书排版助手",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

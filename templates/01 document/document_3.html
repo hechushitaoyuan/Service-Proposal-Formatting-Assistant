@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>建筑项目展示 - 模板3</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            background: #f0f0f0;
+            padding: 20px;
+        }
+        
+        .template-content {
+            width: 420mm;
+            height: 297mm;
+            background: white;
+            position: relative;
+            margin: 0 auto;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .project-title {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            font-family: 'Microsoft YaHei', sans-serif;
+            font-weight: bold;
+            font-size: 24px;
+            color: #000;
+            z-index: 10;
+        }
+        
+        .info-table {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            width: 250px;
+            border-collapse: collapse;
+            font-family: 'Microsoft YaHei', sans-serif;
+            font-size: 12px;
+            z-index: 10;
+        }
+        
+        .info-table tr {
+            border: none;
+        }
+        
+        .info-table td {
+            padding: 6px 0;
+            border: none;
+            vertical-align: top;
+        }
+        
+        .info-table td:first-child {
+            font-weight: bold;
+            color: #333;
+            width: 80px;
+        }
+        
+        .info-table td:last-child {
+            color: #666;
+            word-wrap: break-word;
+        }
+        
+        .image-board {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            bottom: 30px;
+            width: calc(100% - 350px);
+            z-index: 5;
+        }
+        
+        .image-frame {
+            position: absolute;
+            overflow: hidden;
+            background: #f8f8f8;
+            border: 1px solid #ddd; 
+        }
+        
+        .image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            display: block;
+        }
+        
+        /* 模板4：上大下小布局 */
+        .image-frame:nth-child(1) {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: calc(65% - 7.5px);
+        }
+        
+        .image-frame:nth-child(2) {
+            bottom: 0;
+            left: 0;
+            width: calc(50% - 7.5px);
+            height: calc(35% - 7.5px);
+        }
+        
+        .image-frame:nth-child(3) {
+            bottom: 0;
+            right: 0;
+            width: calc(50% - 7.5px);
+            height: calc(35% - 7.5px);
+        }
+        
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .template-content {
+                box-shadow: none;
+                width: 297mm;
+                height: 210mm;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="template-content">
+        <div class="project-title">项目名称</div>
+        <table class="info-table">
+            <tr><td>项目类型</td><td>示例类型</td></tr>
+            <tr><td>建筑面积</td><td>示例面积</td></tr>
+            <tr><td>建筑高度</td><td>示例高度</td></tr>
+        </table>
+        <div class="image-board">
+            <div class="image-frame"></div>
+            <div class="image-frame"></div>
+            <div class="image-frame"></div>
+            <div class="image-frame"></div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

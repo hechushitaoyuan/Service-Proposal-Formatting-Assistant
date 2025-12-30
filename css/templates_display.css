@@ -1,0 +1,465 @@
+/* 展板格式模板样式 - 从display_1.html提取 */
+
+/* 模板1通用样式 - 展板格式尺寸（竖向A1） */
+.template-content {
+    width: 594mm;
+    height: 841mm;
+    background: white;
+    position: relative;
+    margin: 0 auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transform-origin: center center;
+    overflow: hidden;
+}
+
+/* 根据容器大小自适应缩放 - 模板1 */
+.template-container .template-content {
+    transform: scale(0.2);
+    transform-origin: center center;
+    transition: transform 0.3s ease;
+}
+
+/* 模板2和模板3的尺寸和缩放 - 覆盖通用样式 */
+.template-container .display-2.template-content,
+.template-container .display-3.template-content {
+    width: 1058px;
+    height: 3326px;
+    transform: scale(0.15);
+    transform-origin: center center;
+    transition: transform 0.3s ease;
+}
+
+/* 固定在色块上的文字 */
+.award-name {
+    position: absolute;
+    top: 20px;
+    left: 80px;
+    color: rgb(0, 0, 0);
+    font-size: 72px;
+    font-weight: bold;
+    z-index: 11;
+}
+
+/* 固定的红色色块 */
+.award-block {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 160px;
+    background-color: rgba(45, 91, 143,0.65);
+    z-index: 10;
+}
+
+/* 项目编号样式 */
+.project-number {
+    position: absolute;
+    top: 205px;
+    left: 80px;
+    font-family: 'Microsoft YaHei', sans-serif;
+    font-weight: bold;
+    font-size: 48px;
+    color: #ffffff;
+    z-index: 11;
+}
+
+.project-number-block {
+    position: absolute;
+    top: 200px;
+    left: 0px;
+    width: 140px;
+    height: 80px;
+    background-color: rgb(0, 0, 0);
+    z-index: 10;
+}
+
+/* 项目标题样式 */
+.project-title {
+    position: absolute;
+    top: 195px;
+    left: 190px;
+    font-family: 'Microsoft YaHei', sans-serif;
+    font-weight: bold;
+    font-size: 64px;
+    color: #000;
+    z-index: 10;
+}
+
+/* 信息表格样式 */
+.info-table {
+    position: absolute;
+    top: 300px;
+    left: 200px;
+    width: 600px;
+    border-collapse: collapse;
+    font-family: 'Microsoft YaHei', sans-serif;
+    font-size: 32px;
+    z-index: 10;
+}
+
+.info-table tr {
+    border: none;
+}
+
+.info-table td {
+    padding: 6px 0;
+    border: none;
+    vertical-align: top;
+}
+
+.info-table td:first-child {
+    font-weight: bold;
+    color: #000000;
+    width: 200px;
+}
+
+.info-table td:last-child {
+    color: #000000;
+    word-wrap: break-word;
+}
+
+/* 图片展板区域 */
+.image-board {
+    position: absolute;
+    left: 60px;
+    right: 60px;
+    bottom: 60px;
+    height: calc(100% - 350px);
+    z-index: 5;
+}
+
+/* 图片框通用样式 */
+.image-frame {
+    position: absolute;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    background: #f8f8f8;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.image-frame:hover {
+    border-color: #3498db;
+}
+
+.image-frame.drop-zone {
+    border: 2px dashed #3498db;
+    background: rgba(52, 152, 219, 0.1);
+}
+
+.image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    transition: transform 0.3s;
+    cursor: move;
+    display: block;
+}
+
+.image-frame img:hover {
+    transform: scale(1.02);
+}
+
+/* 图片框占位符 */
+.image-placeholder {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #999;
+    font-size: 14px;
+    text-align: center;
+    pointer-events: none;
+}
+
+.image-frame img + .image-placeholder {
+    display: none;
+}
+
+/* 模板1布局 - display_1.html */
+.display-1 .image-frame:nth-child(1) {
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: calc(30% - 15px);
+}
+
+.display-1 .image-frame:nth-child(2) {
+    top: 30%;
+    right: 0;
+    width: 60%;
+    height: calc(15% - 15px);
+}
+
+.display-1 .image-frame:nth-child(3) {
+    top: 45%;
+    right: calc(40% + 7.5px);
+    width: calc(20% - 7.5px);
+    height: calc(15% - 7.5px);
+}
+
+.display-1 .image-frame:nth-child(4) {
+    top: 45%;
+    right: 0;
+    width: calc(40% - 7.5px);
+    height: calc(15% - 7.5px);
+}
+
+.display-1 .image-frame:nth-child(5) {
+    top: calc(60% + 7.5px);
+    right: 0;
+    width: 60%;
+    height: calc(15% - 7.5px);
+}
+
+.display-1 .image-frame:nth-child(6) {
+    top: calc(75% + 15px);
+    right: calc(35% + 7.5px);
+    width: calc(25% - 7.5px);
+    height: calc(25% - 7.5px);
+}
+
+.display-1 .image-frame:nth-child(7) {
+    top: calc(75% + 15px);
+    right: 0;
+    width: calc(35% - 7.5px);
+    height: calc(25% - 7.5px);
+}
+
+.display-1 .image-frame:nth-child(8) {
+    bottom: 0;
+    left: 0;
+    width: calc(40% - 15px);
+    height: calc(30% - 7.5px);
+}
+
+.display-1 .image-frame:nth-child(9) {
+    bottom: calc(30% + 7.5px);
+    left: 0;
+    width: calc(40% - 15px);
+    height: calc(20% - 7.5px);
+}
+
+/* 模板2布局 - display_2.html */
+.display-2.template-content {
+    background: url('../templates/03 display/Display_background_1.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.display-2 .award-block,
+.display-2 .award-name {
+    display: none;
+}
+
+.display-2 .project-number-block {
+    position: absolute;
+    top: 700px;
+    left: 30px;
+    width: 10px;
+    height: 380px;
+    background-color: rgb(166, 0, 0);
+    z-index: 10;
+}
+
+.display-2 .project-title {
+    position: absolute;
+    top: 680px;
+    left: 80px;
+    font-family: 'Microsoft YaHei', sans-serif;
+    font-weight: bold;
+    font-size: 72px;
+    color: #000;
+    z-index: 10;
+}
+
+.display-2 .info-table {
+    position: absolute;
+    top: 880px;
+    left: 80px;
+    width: 600px;
+    border-collapse: collapse;
+    font-family: 'Microsoft YaHei', sans-serif;
+    font-size: 36px;
+    z-index: 10;
+}
+
+.display-2 .image-board {
+    position: absolute;
+    top: 35%;
+    left: 30px;
+    right: 30px;
+    height: 50%;
+    z-index: 5;
+}
+
+.display-2 .image-frame:nth-child(1) {
+    top: 0%;
+    left: 0;
+    width: 100%;
+    height: calc(33% - 15px);
+}
+
+.display-2 .image-frame:nth-child(2) {
+    top: calc(33% + 15px);
+    left: 0;
+    width: 100%;
+    height: calc(33% - 15px);
+}
+
+.display-2 .image-frame:nth-child(3) {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: calc(33% - 15px);
+}
+
+/* 隐藏多余的图片框 */
+.display-2 .image-frame:nth-child(n+4) {
+    display: none;
+}
+
+/* 模板3布局 - display_3.html */
+.display-3.template-content {
+    background: url('../templates/03 display/Display_background_2.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.display-3 .award-block,
+.display-3 .award-name {
+    display: none;
+}
+
+.display-3 .project-number-block {
+    position: absolute;
+    top: 700px;
+    left: 30px;
+    width: 10px;
+    height: 380px;
+    background-color: rgb(166, 0, 0);
+    z-index: 10;
+}
+
+.display-3 .project-title {
+    position: absolute;
+    top: 680px;
+    left: 80px;
+    font-family: 'Microsoft YaHei', sans-serif;
+    font-weight: bold;
+    font-size: 72px;
+    color: #000;
+    z-index: 10;
+}
+
+.display-3 .info-table {
+    position: absolute;
+    top: 880px;
+    left: 80px;
+    width: 600px;
+    border-collapse: collapse;
+    font-family: 'Microsoft YaHei', sans-serif;
+    font-size: 36px;
+    z-index: 10;
+}
+
+.display-3 .image-board {
+    position: absolute;
+    top: 35%;
+    left: 30px;
+    right: 30px;
+    height: 50%;
+    z-index: 5;
+}
+
+
+.display-3 .image-frame:nth-child(1) {
+    top: 0%;
+    left: 0;
+    width: 100%;
+    height: calc(40% - 15px);
+}
+
+.display-3 .image-frame:nth-child(2) {
+    top: calc(40% + 15px);
+    left: 0;
+    width: 100%;
+    height: calc(40% - 15px);
+}
+
+.display-3 .image-frame:nth-child(3) {
+    bottom: 0;
+    left: 0;
+    width: calc(50% - 7.5px);
+    height: calc(20% - 30px);
+}
+
+.display-3 .image-frame:nth-child(4) {
+    bottom: 0;
+    right: 0;
+    width: calc(50% - 7.5px);
+    height: calc(20% - 30px);
+}
+
+/* 隐藏多余的图片框 */
+.display-3 .image-frame:nth-child(n+5) {
+    display: none;
+}
+
+/* 图片删除按钮 */
+.image-delete-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    background: rgba(231, 76, 60, 0.9);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 12px;
+    display: none;
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-frame:hover .image-delete-btn {
+    display: flex;
+}
+
+.image-delete-btn:hover {
+    background: rgba(192, 57, 43, 1);
+}
+
+/* 图片移动控制按钮 */
+.image-controls {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 100;
+}
+
+.image-frame:hover .image-controls {
+    opacity: 1;
+}
+
+.control-btn {
+    padding: 4px 8px;
+    background: rgba(52, 152, 219, 0.9);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background 0.3s;
+}
+
+.control-btn:hover {
+    background: rgba(41, 128, 185, 1);
+}

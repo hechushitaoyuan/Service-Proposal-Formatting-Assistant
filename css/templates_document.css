@@ -1,0 +1,386 @@
+/* A3模板通用样式 - 横向A3 */
+.template-content {
+    width: 420mm;
+    height: 297mm;
+    background: white;
+    position: relative;
+    margin: 0 auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform-origin: center center;
+    overflow: hidden;
+}
+
+/* 根据容器大小自适应缩放 - 横向A3优化 */
+.template-container .template-content {
+    transform: scale(0.35);
+    transform-origin: center center;
+    transition: transform 0.3s ease;
+}
+
+/* 项目标题样式 */
+.project-title {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    font-family: 'Microsoft YaHei', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: #000;
+    z-index: 10;
+}
+
+/* 信息表格样式 */
+.info-table {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    width: 250px;
+    border-collapse: collapse;
+    font-family: 'Microsoft YaHei', sans-serif;
+    font-size: 12px;
+    z-index: 10;
+}
+
+.info-table tr {
+    border: none;
+}
+
+.info-table td {
+    padding: 6px 0;
+    border: none;
+    vertical-align: top;
+}
+
+.info-table td:first-child {
+    font-weight: bold;
+    color: #333;
+    width: 80px;
+}
+
+.info-table td:last-child {
+    color: #666;
+    word-wrap: break-word;
+}
+
+/* 图片展板区域 - 横向A3布局优化 */
+.image-board {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    bottom: 30px;
+    width: calc(100% - 350px);
+    z-index: 5;
+}
+
+/* 图片框通用样式 */
+.image-frame {
+    position: absolute;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    background: #f8f8f8;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.image-frame:hover {
+    border-color: #3498db;
+}
+
+.image-frame.drop-zone {
+    border: 2px dashed #3498db;
+    background: rgba(52, 152, 219, 0.1);
+}
+
+.image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    transition: transform 0.3s;
+    cursor: move;
+    display: block;
+}
+
+.image-frame img:hover {
+    transform: scale(1.02);
+}
+
+/* 图片框占位符 */
+.image-placeholder {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #999;
+    font-size: 14px;
+    text-align: center;
+    pointer-events: none;
+}
+
+.image-frame img + .image-placeholder {
+    display: none;
+}
+
+/* 模板1布局 - 对应 document_1.html */
+.template-1 .image-frame:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: calc(35% - 7.5px);
+    height: calc(50% - 7.5px);
+}
+
+.template-1 .image-frame:nth-child(2) {
+    top: 0;
+    right: 0;
+    width: calc(65% - 7.5px);
+    height: calc(50% - 7.5px);
+}
+
+.template-1 .image-frame:nth-child(3) {
+    bottom: 0;
+    left: 0;
+    width: calc(65% - 7.5px);
+    height: calc(50% - 7.5px);
+}
+
+.template-1 .image-frame:nth-child(4) {
+    bottom: 0;
+    right: 0;
+    width: calc(35% - 7.5px);
+    height: calc(50% - 7.5px);
+}
+
+/* 模板2布局 - 对应 document_2.html */
+.template-2 .image-frame:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: calc(70% - 7.5px);
+    height: calc(60% - 7.5px);
+}
+
+.template-2 .image-frame:nth-child(2) {
+    bottom: 0;
+    left: 0;
+    width: calc(35% - 7.5px);
+    height: calc(40% - 7.5px);
+}
+
+.template-2 .image-frame:nth-child(3) {
+    bottom: 0;
+    left: calc(35% + 7.5px);
+    width: calc(35% - 15px);
+    height: calc(40% - 7.5px);
+}
+
+.template-2 .image-frame:nth-child(4) {
+    bottom: 0;
+    right: 0;
+    width: calc(30% - 7.5px);
+    height: 100%;
+}
+
+/* 模板3布局 - 对应 document_3.html */
+.template-3 .image-frame:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(65% - 7.5px);
+}
+
+.template-3 .image-frame:nth-child(2) {
+    bottom: 0;
+    left: 0;
+    width: calc(50% - 7.5px);
+    height: calc(35% - 7.5px);
+}
+
+.template-3 .image-frame:nth-child(3) {
+    bottom: 0;
+    right: 0;
+    width: calc(50% - 7.5px);
+    height: calc(35% - 7.5px);
+}
+
+/* 模板4布局 - 对应 document_4.html */
+.template-4 .image-frame:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: calc(50% - 7.5px);
+    height: 100%;
+}
+
+.template-4 .image-frame:nth-child(2) {
+    top: 0;
+    right: 0;
+    width: calc(50% - 7.5px);
+    height: calc(50% - 7.5px);
+}
+
+.template-4 .image-frame:nth-child(3) {
+    bottom: 0;
+    right: 0;
+    width: calc(50% - 7.5px);
+    height: calc(50% - 7.5px);
+}
+
+/* 模板5布局 - 对应 document_5.html */
+.template-5 .image-frame:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: calc(50% - 7.5px);
+    height: calc(50% - 7.5px);
+}
+
+.template-5 .image-frame:nth-child(2) {
+    top: 0;
+    right: 0;
+    width: calc(50% - 7.5px);
+    height: calc(50% - 7.5px);
+}
+
+.template-5 .image-frame:nth-child(3) {
+    bottom: 0;
+    left: 0;
+    width: calc(50% - 7.5px);
+    height: calc(50% - 7.5px);
+}
+
+.template-5 .image-frame:nth-child(4) {
+    bottom: 0;
+    right: 0;
+    width: calc(50% - 7.5px);
+    height: calc(50% - 7.5px);
+}
+
+/* 图片删除按钮 */
+.image-delete-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    background: rgba(231, 76, 60, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 12px;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 15;
+}
+
+.image-frame:hover .image-delete-btn {
+    display: flex;
+}
+
+.image-delete-btn:hover {
+    background: rgba(231, 76, 60, 1);
+}
+
+/* 图片位置调整控件 */
+.image-controls {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 4px;
+    padding: 4px;
+    display: none;
+    justify-content: center;
+    gap: 8px;
+    z-index: 15;
+}
+
+.image-frame:hover .image-controls {
+    display: flex;
+}
+
+.control-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 3px;
+    font-size: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: white;
+}
+
+/* 打印样式 - 横向A3 */
+@media print {
+    .template-container .template-content {
+        transform: none;
+        margin: 0;
+        width: 420mm;
+        height: 297mm;
+    }
+    
+    .image-delete-btn,
+    .image-controls {
+        display: none !important;
+    }
+    
+    body {
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .app-container {
+        display: block;
+    }
+    
+    .left-panel {
+        display: none;
+    }
+    
+    .right-panel {
+        display: none;
+    }
+    
+    .preview-header,
+    .template-selector {
+        display: none;
+    }
+    
+    .preview-panel {
+        border: none;
+        padding: 0;
+        margin: 0;
+        background: white;
+    }
+}
+
+/* 模板加载动画 */
+.template-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #999;
+    font-size: 16px;
+}
+
+.template-loading::after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ddd;
+    border-top: 2px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+    vertical-align: middle;
+}

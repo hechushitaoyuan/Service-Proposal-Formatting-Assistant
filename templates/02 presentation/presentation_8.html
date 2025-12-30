@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>建筑项目展示 - 模板3</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            background: #ffffff;
+            padding: 20px;
+        }
+        
+        .template-content {
+            width: 338.67mm;
+            height: 190.5mm;
+            background: url('background.jpg') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            margin: 0 auto;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        
+        
+        .image-board {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            bottom: 15px;
+            z-index: 5;
+        }
+        
+        .image-frame {
+            position: absolute;
+            overflow: hidden;
+            background: #f8f8f8;
+            border: 1px solid #ddd; 
+        }
+        
+        .image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            display: block;
+        }
+        
+        /* 模板3：水平三图布局 */
+        .image-frame:nth-child(1) {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: calc(45% - 7.5px);
+        }
+        
+        .image-frame:nth-child(2) {
+            bottom: calc(27% + 7.5px);
+            left: 0;
+            width: calc(40% - 7.5px);
+            height: calc(27% - 7.5px);
+        }
+
+        .image-frame:nth-child(3) {
+            bottom:0;
+            left: 0;
+            width: calc(40% - 7.5px);
+            height: calc(27% - 7.5px);
+        }
+
+        .image-frame:nth-child(4) {
+            bottom: 0;
+            left: calc(40% + 7.5px);
+            width: calc(20% - 7.5px);
+            height: calc(55% - 7.5px);
+        }
+
+        .image-frame:nth-child(5) {
+            bottom: 0;
+            left: calc(60% + 15px);
+            width: calc(40% - 15px);
+            height: calc(55% - 7.5px);
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .template-content {
+                box-shadow: none;
+                width: 297mm;
+                height: 210mm;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="template-content">
+        <div class="image-board">
+            <div class="image-frame"></div>
+            <div class="image-frame"></div>
+            <div class="image-frame"></div>
+            <div class="image-frame"></div>
+            <div class="image-frame"></div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

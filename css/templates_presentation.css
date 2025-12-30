@@ -1,0 +1,429 @@
+/* 汇报格式模板样式（源自 presentation_1.html ~ presentation_8.html） */
+
+/* 基础布局 */
+.template-content {
+    width: 338.67mm;
+    height: 190.5mm;
+    background: url('../templates/02 presentation/background.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    margin: 0 auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* 预览时缩放 */
+.template-container .template-content {
+    transform: scale(0.35);
+    transform-origin: center center;
+    transition: transform 0.3s ease;
+}
+
+/* 项目标题 */
+.project-title {
+    position: absolute;
+    font-family: 'Microsoft YaHei', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: #ffffff;
+    z-index: 10;
+}
+
+/* 信息表格 */
+.info-table {
+    position: absolute;
+    border-collapse: separate;
+    border-spacing: 1px;
+    font-family: 'Microsoft YaHei', sans-serif;
+    font-size: 14px;
+    z-index: 10;
+}
+
+.info-table tr {
+    border: none;
+}
+
+.info-table td {
+    padding: 6px 0;
+    border: none;
+    vertical-align: top;
+}
+
+.info-table td:first-child {
+    font-weight: bold;
+    color: #ffffff;
+    width: 80px;
+}
+
+.info-table td:last-child {
+    color: #ffffff;
+    word-wrap: break-word;
+}
+
+/* 透明覆盖块（presentation_3 使用） */
+.transparent-block {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 500px;
+    height: 300px;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9;
+}
+
+/* 图片容器 */
+.image-board {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    z-index: 5;
+}
+
+.image-frame {
+    position: absolute;
+    overflow: hidden;
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+}
+
+.image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+}
+
+/* 交互扩展（拖拽系统） */
+.image-frame.drop-zone {
+    border: 2px dashed #3498db;
+    background: rgba(52, 152, 219, 0.1);
+}
+
+.image-frame img {
+    transition: transform 0.3s ease;
+    cursor: move;
+}
+
+.image-frame img:hover {
+    transform: scale(1.02);
+}
+
+.image-placeholder {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #999;
+    font-size: 14px;
+    pointer-events: none;
+    text-align: center;
+}
+
+.image-frame img + .image-placeholder {
+    display: none;
+}
+
+.image-delete-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    background: rgba(231, 76, 60, 0.9);
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    font-size: 12px;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.image-frame:hover .image-delete-btn {
+    display: flex;
+}
+
+.image-delete-btn:hover {
+    background: rgba(192, 57, 43, 1);
+}
+
+.image-controls {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 100;
+}
+
+.image-frame:hover .image-controls {
+    opacity: 1;
+}
+
+.control-btn {
+    padding: 4px 8px;
+    background: rgba(52, 152, 219, 0.9);
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.control-btn:hover {
+    background: rgba(41, 128, 185, 1);
+}
+
+@media print {
+    body {
+        background: #ffffff;
+        padding: 0;
+    }
+
+    .template-content {
+        box-shadow: none;
+        width: 338mm;
+        height: 190mm;
+    }
+}
+
+/* =========================
+   各模板布局
+   ========================= */
+
+/* presentation_1 */
+.presentation-1 .image-board {
+    bottom: 235px;
+}
+
+.presentation-1 .image-frame:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.presentation-1 .project-title {
+    top: 495px;
+    left: 60px;
+}
+
+.presentation-1 .info-table {
+    top: 490px;
+    right: 400px;
+    width: 600px;
+    height: 100px;
+}
+
+/* presentation_2 */
+.presentation-2 .image-frame:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: calc(100% - 400px);
+    height: 100%;
+}
+
+.presentation-2 .image-frame:nth-child(2) {
+    top: 0;
+    right: 0;
+    width: 385px;
+    height: 250px;
+}
+
+.presentation-2 .project-title {
+    bottom: 400px;
+    left: 880px;
+}
+
+.presentation-2 .info-table {
+    bottom: 15px;
+    left: 880px;
+}
+
+/* presentation_3 */
+.presentation-3 .project-title {
+    top: 30px;
+    left: 30px;
+}
+
+.presentation-3 .info-table {
+    top: 80px;
+    left: 30px;
+    height: 200px;
+    border-collapse: collapse;
+}
+
+.presentation-3 .image-board {
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+}
+
+.presentation-3 .image-frame:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* presentation_4 */
+.presentation-4 .image-frame:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: calc(50% - 7.5px);
+    height: 100%;
+}
+
+.presentation-4 .image-frame:nth-child(2) {
+    top: 0;
+    right: 0;
+    width: calc(50% - 7.5px);
+    height: calc(50% - 7.5px);
+}
+
+.presentation-4 .image-frame:nth-child(3) {
+    bottom: 0;
+    right: 0;
+    width: calc(50% - 7.5px);
+    height: calc(50% - 7.5px);
+}
+
+/* presentation_5 */
+.presentation-5 .image-frame:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(60% - 7.5px);
+}
+
+.presentation-5 .image-frame:nth-child(2) {
+    bottom: 0;
+    left: 0;
+    width: calc(33.33% - 7.5px);
+    height: calc(40% - 7.5px);
+}
+
+.presentation-5 .image-frame:nth-child(3) {
+    bottom: 0;
+    left: calc(33.33% + 7.5px);
+    width: calc(33.33% - 7.5px);
+    height: calc(40% - 7.5px);
+}
+
+.presentation-5 .image-frame:nth-child(4) {
+    bottom: 0;
+    left: calc(66.66% + 15px);
+    width: calc(33.33% - 15px);
+    height: calc(40% - 7.5px);
+}
+
+/* presentation_6 */
+.presentation-6 .image-frame:nth-child(1) {
+    bottom: 0;
+    right: 0;
+    width: calc(30% - 7.5px);
+    height: 100%;
+}
+
+.presentation-6 .image-frame:nth-child(2) {
+    top: 0;
+    left: 0;
+    width: calc(35% - 7.5px);
+    height: calc(50% - 7.5px);
+}
+
+.presentation-6 .image-frame:nth-child(3) {
+    top: 0;
+    left: calc(35% + 7.5px);
+    width: calc(35% - 15px);
+    height: calc(50% - 7.5px);
+}
+
+.presentation-6 .image-frame:nth-child(4) {
+    bottom: 0;
+    left: 0;
+    width: calc(25% - 7.5px);
+    height: calc(50% - 7.5px);
+}
+
+.presentation-6 .image-frame:nth-child(5) {
+    bottom: 0;
+    left: calc(25% + 7.5px);
+    width: calc(45% - 15px);
+    height: calc(50% - 7.5px);
+}
+
+/* presentation_7 */
+.presentation-7 .image-frame:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: calc(50% - 7.5px);
+    height: calc(60% - 7.5px);
+}
+
+.presentation-7 .image-frame:nth-child(2) {
+    top: 0;
+    right: 0;
+    width: calc(50% - 7.5px);
+    height: calc(30% - 7.5px);
+}
+
+.presentation-7 .image-frame:nth-child(3) {
+    bottom: 0;
+    left: 0;
+    width: calc(50% - 7.5px);
+    height: calc(40% - 7.5px);
+}
+
+.presentation-7 .image-frame:nth-child(4) {
+    bottom: 0;
+    right: 0;
+    width: calc(50% - 7.5px);
+    height: calc(70% - 7.5px);
+}
+
+/* presentation_8 */
+.presentation-8 .image-frame:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(45% - 7.5px);
+}
+
+.presentation-8 .image-frame:nth-child(2) {
+    bottom: calc(27% + 7.5px);
+    left: 0;
+    width: calc(40% - 7.5px);
+    height: calc(27% - 7.5px);
+}
+
+.presentation-8 .image-frame:nth-child(3) {
+    bottom: 0;
+    left: 0;
+    width: calc(40% - 7.5px);
+    height: calc(27% - 7.5px);
+}
+
+.presentation-8 .image-frame:nth-child(4) {
+    bottom: 0;
+    left: calc(40% + 7.5px);
+    width: calc(20% - 7.5px);
+    height: calc(55% - 7.5px);
+}
+
+.presentation-8 .image-frame:nth-child(5) {
+    bottom: 0;
+    left: calc(60% + 15px);
+    width: calc(40% - 15px);
+    height: calc(55% - 7.5px);
+}
